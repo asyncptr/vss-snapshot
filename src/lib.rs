@@ -7,3 +7,8 @@
 #[cfg(windows)]
 #[allow(dead_code, non_snake_case, non_camel_case_types, clippy::all)]
 mod bindings;
+#[cfg(windows)]
+mod error;
+
+#[cfg(windows)]
+pub use error::{Error, ErrorKind, Result};
