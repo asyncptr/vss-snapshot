@@ -1,0 +1,20 @@
+[package]
+name = "vss-snapshot"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+description = "Safe Rust API for creating and managing Windows Volume Shadow Copy (VSS) snapshots"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/asyncptr/vss-snapshot"
+readme = "README.md"
+keywords = ["vss", "shadow-copy", "snapshot", "windows", "backup"]
+categories = ["os::windows-apis", "filesystem"]
+exclude = ["/.github", "/tools"]
+
+[target.'cfg(windows)'.dependencies]
+# Keep in step with windows-bindgen in tools/bindgen/Cargo.toml.
+windows-core = "0.100"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = ["x86_64-pc-windows-msvc", "aarch64-pc-windows-msvc"]
