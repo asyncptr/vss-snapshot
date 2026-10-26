@@ -1,0 +1,12 @@
+[package]
+name = "vss-snapshot-bindgen"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+# Standalone so building the library never pulls in windows-bindgen.
+[workspace]
+
+[dependencies]
+# Keep in step with the windows-core version in the root Cargo.toml.
+windows-bindgen = "=0.100.0"
